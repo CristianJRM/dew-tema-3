@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        var operaciones = {
+            "8 * 125": 1000,
+            "97 / 2": 38.5,
+            "318 ^ 3": 32157432,
+            "2 + 2": 4,
+            "1 ^ 0": 1,
+        };
+
+        preguntarUsuario();
+        
+        function preguntarUsuario(){
+            let operacionesGuardadas = (Object.keys(operaciones));
+            let operacionAleatoria = (operacionesGuardadas)[Math.floor(Math.random()*operacionesGuardadas.length)];
+            let resultadoUsuario = window.prompt("Resuelve la siguiente operación: " + operacionAleatoria);
+            if(operaciones[operacionAleatoria] == resultadoUsuario){
+                window.alert("¡Correcto!");
+            }else{
+                window.alert("¡Incorrecto!");
+            }
+        }
+    </script>
+</body>
+</html>
