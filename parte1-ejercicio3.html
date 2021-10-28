@@ -4,9 +4,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Diferencias entre for, forEach, for .. in y for .. of</title>
 </head>
 <body>
-    
+    <script>
+        //Vamos a explicar las diferencias entre for, 
+        //forEach, for .. in y for .. of
+        let arrayNumerico = [0, 1, 2, 3, 4];
+
+        //Cuando iteramos con un array, utilizamos un índice
+        //Este índice tiene un valor inicial que va cambiando según una regla
+        //"Cuando cumple una condición, el bucle para.
+        document.write("Ejemplo de bucle for estándar:<br>")
+        for(let indice = 0; indice < arrayNumerico.length; indice++){
+            document.write(arrayNumerico[indice]);
+        }
+        //De la misma manera que el for, el for in itera con un índice
+        //Cuando el objetivo es iterar todo el array, es más rápido escribir for .. in
+        
+        document.write("<br> Ejemplo de bucle for .. in:<br>")
+        for(let indice in arrayNumerico){
+            document.write(arrayNumerico[indice]);
+        }
+
+        //El bucle forEach permite acceder directamente a los elementos
+        //del objeto. Pero no puede saber el índice en el que se encuentra.
+        //El uso principal del forEach es de utilizar una función anónima
+        //para cada uno de los elementos de la colección.
+        document.write("<br>Ejemplo de bucle forEach:<br>")
+        arrayNumerico.forEach((numero) => {
+            document.write(numero);
+        })
+
+        //El bucle for .. of sirve para recorrer todas las colecciones iterables
+        document.write("<br>Ejemplo de bucle for .. of:<br>")
+        for(const numero of arrayNumerico){
+            document.write(numero);
+        }
+    </script>
 </body>
 </html>

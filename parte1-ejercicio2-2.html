@@ -9,18 +9,14 @@
 <body>
     
     <script>
-        function addNumbers(){
-            firstNum = 4;
-            secondNum = 8;
-            result = firstNum + secondNum;
-            return result;
+        let v1 = window.prompt("Introduce el primer número");
+        let v2 = window.prompt("Introduce el segundo número");
+
+        calcularResultado(v1, v2);
+
+        function calcularResultado(v1, v2){
+            window.alert((v1 > v2)? "El segundo número debe ser mayor o igual":parseInt(v1)+parseInt(v2));
         }
-        result = 0;
-        //result vale 0
-        window.alert(result);
-        sum = addNumbers();
-        //result vale 12
-        window.alert(result);
     </script>
 </body>
 </html>
