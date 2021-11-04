@@ -30,19 +30,18 @@
         }
         .rotar{
             -webkit-animation-name: cssAnimation;
-            -webkit-animation-duration: 1.25s;
+            -webkit-animation-duration: 1s;
             -webkit-animation-iteration-count: 1;
-            -webkit-animation-timing-function: ease;
-            -webkit-animation-fill-mode: forwards;
         }
 
 @-webkit-keyframes cssAnimation {
-  from {
-    -webkit-transform: rotate(0deg) scale(1) skew(0deg);
+  0%, 100% {
+    -webkit-transform: rotate(0deg) scale(0.5) skew(0deg);
   }
-  to {
-    -webkit-transform: rotateX(360deg) scale(1.25) skew(0deg);
+  50% {
+    -webkit-transform: rotateX(360deg) scale(1.5) skew(0deg);
   }
+  
 }
     </style>
 </head>
@@ -64,7 +63,6 @@
 
         function ani() {
             document.getElementById('exterior').className += ' rotar';
-            document.getElementById('interior').className += ' rotar';
             
         }
     </script>
