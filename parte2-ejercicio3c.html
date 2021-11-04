@@ -7,6 +7,41 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <h2>Número de argumentos variables</h2>
+    <p>Introduce números a sumar, separados por comas sin espacios. Por ejemplo: 3,5,2.5,10,15.2</p>
+    Números:<input type="text" id="numerosIntroducidos">
+    <p id="resultado">Resultado</p>
+
+    <button onclick="calcularSumatorio()">Calcular sumatorio</button>
+
+    <script>
+
+        function calcularSumatorio(){
+            var numeros = document.getElementById("numerosIntroducidos").innerHTML;
+            numeros = numeros.split(",");
+            numeros = parseFloatArray(numeros);
+            if(numeros == false){
+                window.alert("Se ha introducido algún elemento inválido.");
+            }else{
+                document.getElementById("resultado").innerHTML = realizarSumatorio(numeros);
+            }
+        }
+
+        function parseFloatArray(numeros){
+            for(let i = 0; i < numeros.length; i++){
+                numeros[i] = parseFloat(numeros[i]);
+                if(isNaN(numeros[i])) return false;
+            }
+            return numeros;
+        }
+
+        function realizarSumatorio(numeros){
+            let resultado = 0;
+            for(numero in numeros){
+                resultado += numero;
+            }
+            return resultado;
+        }
+    </script>
 </body>
 </html>
