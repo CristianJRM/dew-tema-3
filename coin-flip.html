@@ -36,7 +36,7 @@
 
 @-webkit-keyframes cssAnimation {
   0%, 100% {
-    -webkit-transform: rotate(0deg) scale(0.5) skew(0deg);
+    -webkit-transform: rotate(0deg) scale(1) skew(0deg);
   }
   50% {
     -webkit-transform: rotateX(360deg) scale(1.5) skew(0deg);
@@ -49,7 +49,7 @@
     
     <div id="exterior" class="moneda" onclick="tirarMoneda('a')">
         <div id="interior" class="interiorMoneda">
-            <h2 id="texto">CARA</h2>
+            <h2 id="texto"></h2>
         </div>
     </div>
 
@@ -59,11 +59,23 @@
             //Si caraOCruz vale 0, es cruz; si no, es cara.
             let caraOCruz = Math.round(Math.random());
             ani();
+            dibujarCaraOCruz(caraOCruz);
         }
 
         function ani() {
             document.getElementById('exterior').className += ' rotar';
             
+        }
+
+        function dibujarCaraOCruz(caraOCruz){
+            if(caraOCruz == 0){
+                document.getElementById('texto').innerHTML = "CRUZ";
+                document.getElementById('interior').style.backgroundColor = "black";
+                document.getElementById('exterior').style.backgroundColor = "red";
+                document.getElementById('texto').style.color = "white";
+            }else{
+                document.getElementById('texto').innerHTML = "CARA";
+            }
         }
     </script>
 </body>
