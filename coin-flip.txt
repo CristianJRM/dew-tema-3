@@ -1,0 +1,6 @@
+El coin flip tiene que tener varias funcionalidades:
+    1º Debe ser capaz de poder elegir entre cara o cruz
+    2º Debe poder realizar la transición
+    3º Dicha transición implicará unos cambios de estilo
+    4º En caso de acertar o de fallar, saldrá un mensaje indicándolo
+    5º No habrá sistema de puntuación

@@ -9,7 +9,7 @@
         .moneda{
             width: 300px;
             height: 300px;
-            background-color: black;
+            background-color: gray;
             border-radius: 50%;
             margin: 0 auto;
             margin-top: 25vh;
@@ -17,7 +17,7 @@
         .interiorMoneda{
             width: 250px;
             height: 250px;
-            background-color: red;
+            background-color: gold;
             border-radius: 50%;
             top: 25px;
             left: 25px;
@@ -75,6 +75,9 @@
                 document.getElementById('texto').style.color = "white";
             }else{
                 document.getElementById('texto').innerHTML = "CARA";
+                document.getElementById('interior').style.backgroundColor = "red";
+                document.getElementById('exterior').style.backgroundColor = "black";
+                document.getElementById('texto').style.color = "white";
             }
         }
     </script>
