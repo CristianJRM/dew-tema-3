@@ -11,8 +11,8 @@
             height: 300px;
             background-color: black;
             border-radius: 50%;
-            -moz-animation:spin 1s linear infinite;
-            animation:spin 1s linear infinite;
+            margin: 0 auto;
+            margin-top: 25vh;
         }
         .interiorMoneda{
             width: 250px;
@@ -22,22 +22,36 @@
             top: 25px;
             left: 25px;
             position: relative;
+            
         }
-        @keyframes spin { 
-        100% { 
-        -webkit-transform: rotate(360deg); 
-        transform:rotate(360deg); 
-    } 
+        h2{
+            text-align: center;
+            line-height:  250px;
+        }
+        .rotar{
+            -webkit-animation-name: cssAnimation;
+            -webkit-animation-duration: 1.25s;
+            -webkit-animation-iteration-count: 1;
+            -webkit-animation-timing-function: ease;
+            -webkit-animation-fill-mode: forwards;
+        }
+
+@-webkit-keyframes cssAnimation {
+  from {
+    -webkit-transform: rotate(0deg) scale(1) skew(0deg);
+  }
+  to {
+    -webkit-transform: rotateX(360deg) scale(1.25) skew(0deg);
+  }
 }
-        @-moz-keyframes spin { 
-            100% { -moz-transform: rotate(360deg); } 
-        }
     </style>
 </head>
 <body>
     
-    <div class="moneda" onclick="tirarMoneda()">
-        <div class="interiorMoneda"></div>
+    <div id="exterior" class="moneda" onclick="tirarMoneda('a')">
+        <div id="interior" class="interiorMoneda">
+            <h2 id="texto">CARA</h2>
+        </div>
     </div>
 
     <script>
@@ -45,8 +59,13 @@
         function tirarMoneda(intensidad){
             //Si caraOCruz vale 0, es cruz; si no, es cara.
             let caraOCruz = Math.round(Math.random());
+            ani();
+        }
 
-
+        function ani() {
+            document.getElementById('exterior').className += ' rotar';
+            document.getElementById('interior').className += ' rotar';
+            
         }
     </script>
 </body>
