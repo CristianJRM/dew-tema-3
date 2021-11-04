@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Factorial</h2>
+    <p>Introduce 0 o un número positivo</p>
+    Número:<input type="text" id="numeroIntroducido">
+    <p id="resultado">Resultado</p>
+
+    <button onclick="calcularFactorial()">Calcular factorial</button>
+
+    <script>
+        function calcularFactorial(){
+            document.getElementById("resultado").innerHTML = "resultado";
+            let numero = parseInt(document.getElementById('numeroIntroducido').value);
+            if(esNumeroInvalido(numero)){
+                window.alert("Introduzca un número válido." + numero);
+            }else{
+                if(numero == 0){
+                    document.getElementById("resultado").innerHTML = "1";
+                }else{
+                    let resultado = numero;
+                    for(let i = 2; i < numero; i++){
+                        resultado *= i;
+                    }
+                    document.getElementById("resultado").innerHTML = resultado;
+                }
+
+            }   
+        }
+
+        function esNumeroInvalido(numero){
+            return isNaN(numero) || numero < 0 ;
+        }
+    </script>
+
+</body>
+</html>
