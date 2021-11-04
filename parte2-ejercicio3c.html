@@ -17,7 +17,7 @@
     <script>
 
         function calcularSumatorio(){
-            var numeros = document.getElementById("numerosIntroducidos").innerHTML;
+            var numeros = document.getElementById("numerosIntroducidos").value;
             numeros = numeros.split(",");
             numeros = parseFloatArray(numeros);
             if(numeros == false){
@@ -37,8 +37,8 @@
 
         function realizarSumatorio(numeros){
             let resultado = 0;
-            for(numero in numeros){
-                resultado += numero;
+            for(let i = 0; i < numeros.length; i++){
+                resultado += parseFloat(numeros[i]);
             }
             return resultado;
         }
